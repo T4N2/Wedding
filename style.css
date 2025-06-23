@@ -1,0 +1,210 @@
+:root {
+    --pink: #f8a5c2;
+    --gold: #ffd700;
+    --bg: #f9f9f9;
+    --dark: #222;
+    --shadow: 0 4px 16px rgba(0,0,0,0.08);
+}
+
+body {
+    font-size: 1.2rem;
+    font-family: 'Work Sans', sans-serif;
+    min-height: 2000px;
+    background: var(--bg);
+    color: var(--dark);
+}
+
+.hero {
+    min-height: 100vh;
+    background: linear-gradient(135deg, var(--pink) 0%, #fff 100%);
+    color: var(--dark);
+    box-shadow: var(--shadow);
+    border-radius: 0 0 32px 32px;
+}
+
+.hero h1 {
+    font-family: 'Sacramento', cursive;
+    font-size: 6rem;
+    color: var(--pink);
+    text-shadow: 0 2px 8px #fff8;
+}
+
+.hero h4 {
+    font-size: 1.6rem;
+}
+
+.hero p {
+    font-size: 1.4rem;
+}
+
+.hero a, .music-control button {
+    background: var(--pink);
+    color: #fff;
+    border-radius: 32px;
+    box-shadow: var(--shadow);
+    border: none;
+    transition: background 0.2s, color 0.2s;
+}
+.hero a:hover, .music-control button:hover {
+    background: var(--gold);
+    color: var(--dark);
+}
+
+/* Section Mempelai */
+#mempelai img {
+    border: 4px solid var(--gold);
+    box-shadow: var(--shadow);
+}
+#mempelai h4 {
+    font-family: 'Sacramento', cursive;
+    font-size: 2.2rem;
+    color: var(--gold);
+}
+
+/* Galeri Foto */
+#galeri img {
+    transition: transform 0.3s;
+    border-radius: 16px;
+    box-shadow: var(--shadow);
+}
+#galeri img:hover {
+    transform: scale(1.05);
+    box-shadow: 0 4px 16px rgba(0,0,0,0.2);
+}
+
+/* Modern Gallery Masonry */
+.gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 1.5rem;
+}
+.gallery-item {
+    position: relative;
+    overflow: hidden;
+    border-radius: 18px;
+    box-shadow: var(--shadow);
+    display: block;
+    transition: transform 0.2s;
+}
+.gallery-item img {
+    width: 100%;
+    height: 220px;
+    object-fit: cover;
+    transition: transform 0.4s cubic-bezier(.4,2,.3,1);
+}
+.gallery-item:hover img {
+    transform: scale(1.08) rotate(-1deg);
+    filter: brightness(0.85) saturate(1.2);
+}
+.gallery-overlay {
+    position: absolute;
+    top: 0; left: 0; right: 0; bottom: 0;
+    background: linear-gradient(135deg, rgba(248,165,194,0.15) 0%, rgba(34,34,34,0.25) 100%);
+    opacity: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #fff;
+    font-size: 2.2rem;
+    transition: opacity 0.3s;
+    pointer-events: none;
+}
+.gallery-item:hover .gallery-overlay {
+    opacity: 1;
+    pointer-events: auto;
+}
+@media (max-width: 600px) {
+    .gallery-item img {
+        height: 120px;
+    }
+    .gallery-grid {
+        gap: 0.7rem;
+    }
+}
+
+/* RSVP */
+#rsvp iframe {
+    border-radius: 16px;
+    box-shadow: var(--shadow);
+}
+
+/* Ucapan & Doa */
+#ucapan .list-group-item {
+    background: #fff8fa;
+    border: 1px solid var(--pink);
+    border-radius: 12px;
+    margin-bottom: 8px;
+}
+
+/* Lokasi */
+#lokasi iframe {
+    border-radius: 16px;
+    box-shadow: var(--shadow);
+}
+
+/* Musik Control */
+.music-control button {
+    font-size: 1.2rem;
+    padding: 0.7rem 1.5rem;
+}
+.music-control button:focus {
+    outline: none;
+    box-shadow: 0 0 0 2px var(--pink);
+}
+
+/* Footer */
+footer {
+    font-size: 1rem;
+    letter-spacing: 1px;
+    background: var(--pink);
+    color: #fff;
+    border-radius: 24px 24px 0 0;
+    box-shadow: var(--shadow);
+}
+footer a {
+    color: var(--gold);
+    transition: color 0.2s;
+}
+footer a:hover {
+    color: #fff;
+}
+
+/* Countdown Styling */
+.simply-countdown {
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    margin: 2rem 0;
+}
+.simply-section {
+    background: #fff8fa;
+    border-radius: 16px;
+    box-shadow: var(--shadow);
+    padding: 1rem 1.5rem;
+    min-width: 80px;
+    text-align: center;
+}
+.simply-amount {
+    font-size: 2.5rem;
+    font-weight: bold;
+    color: var(--gold);
+    display: block;
+    text-shadow: 0 2px 8px #2222, 0 1px 0 #fff;
+}
+.simply-word {
+    font-size: 1.1rem;
+    color: var(--dark);
+    letter-spacing: 1px;
+}
+@media (max-width: 600px) {
+    .simply-countdown {
+        gap: 0.5rem;
+    }
+    .simply-section {
+        padding: 0.5rem 0.7rem;
+        min-width: 50px;
+    }
+    .simply-amount {
+        font-size: 1.3rem;
+    }
+}
